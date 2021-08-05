@@ -1,0 +1,180 @@
+2021-07-08 06:20:26.064272: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcudart.so.10.1
+2021-07-08 06:20:28.410496: I tensorflow/stream_executor/platform/default/dso_loader.cc:48] Successfully opened dynamic library libcuda.so.1
+2021-07-08 06:20:28.482735: E tensorflow/stream_executor/cuda/cuda_driver.cc:314] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2021-07-08 06:20:28.482806: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (9a22d0e2e7c1): /proc/driver/nvidia/version does not exist
+2021-07-08 06:20:28.483301: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN)to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2021-07-08 06:20:28.489872: I tensorflow/core/platform/profile_utils/cpu_utils.cc:104] CPU Frequency: 2299995000 Hz
+2021-07-08 06:20:28.490186: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x55c3bcef6f40 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2021-07-08 06:20:28.490234: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/util/dispatch.py:201: sample_distorted_bounding_box (from tensorflow.python.ops.image_ops_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+`seed2` arg is deprecated.Use sample_distorted_bounding_box_v2 instead.
+2021-07-08 06:20:39.856128: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> 10.58.211.250:8470}
+2021-07-08 06:20:39.856234: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job localhost -> {0 -> localhost:30390}
+2021-07-08 06:20:39.873191: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job worker -> {0 -> 10.58.211.250:8470}
+2021-07-08 06:20:39.873262: I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:301] Initialize GrpcChannelCache for job localhost -> {0 -> localhost:30390}
+2021-07-08 06:20:39.874032: I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:405] Started server with target: grpc://localhost:30390
+Model: "res_net"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+sequential_6 (Sequential)    (None, 40, 40, 64)        29024     
+_________________________________________________________________
+sequential_27 (Sequential)   multiple                  269411    
+_________________________________________________________________
+sequential_54 (Sequential)   multiple                  1362052   
+_________________________________________________________________
+sequential_75 (Sequential)   multiple                  16572803  
+_________________________________________________________________
+sequential_114 (Sequential)  multiple                  7917958   
+_________________________________________________________________
+global_avg_pool_16 (GlobalAv multiple                  0         
+_________________________________________________________________
+dropout (Dropout)            multiple                  0         
+_________________________________________________________________
+dense (Dense)                multiple                  2049000   
+=================================================================
+Total params: 28,200,248
+Trainable params: 28,146,984
+Non-trainable params: 53,264
+_________________________________________________________________
+2021-07-08 06:22:20.381173: W tensorflow/python/util/util.cc:348] Sets are not currently considered sequences, but this may change in the future, so consider avoiding using them.
+Load learner at epoch 170 from /content/drive/MyDrive/models/ImageNet-107-3/ckpt
+14:22:25 Start training
+Epoch 171/200
+14:29:02 train - loss: 2.3482, acc: 0.6718
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Iterator.get_next_as_optional()` instead.
+WARNING:tensorflow:From /usr/local/lib/python3.7/dist-packages/tensorflow/python/data/ops/multi_device_iterator_ops.py:601: get_next_as_optional (from tensorflow.python.data.ops.iterator_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.Iterator.get_next_as_optional()` instead.
+WARNING:tensorflow:Model was constructed with shape (None, 160, 160, 3) for input Tensor("sequential_1_input:0", shape=(None, 160, 160, 3), dtype=float32), but it was called on an input with incompatible shape (None, 224, 224, 3).
+WARNING:tensorflow:Model was constructed with shape (None, 160, 160, 3) for input Tensor("sequential_1_input:0", shape=(None, 160, 160, 3), dtype=float32), but it was called on an input with incompatible shape (None, 224, 224, 3).
+WARNING:tensorflow:Model was constructed with shape (None, 160, 160, 3) for input Tensor("sequential_1/sequential_input:0", shape=(None, 160, 160, 3), dtype=float32), but it was called on an input with incompatible shape (None, 224, 224, 3).
+WARNING:tensorflow:Model was constructed with shape (None, 160, 160, 3) for input Tensor("sequential_1/sequential_input:0", shape=(None, 160, 160, 3), dtype=float32), but it was called on an input with incompatible shape (None, 224, 224, 3).
+WARNING:tensorflow:Model was constructed with shape (None, 80, 80, 32) for input Tensor("sequential_3/sequential_2_input:0", shape=(None, 80, 80, 32), dtype=bfloat16), but it was called on an input with incompatible shape (None, 112, 112, 32).
+WARNING:tensorflow:Model was constructed with shape (None, 80, 80, 32) for input Tensor("sequential_3/sequential_2_input:0", shape=(None, 80, 80, 32), dtype=bfloat16), but it was called on an input with incompatible shape (None, 112, 112, 32).
+WARNING:tensorflow:Model was constructed with shape (None, 80, 80, 32) for input Tensor("sequential_5/sequential_4_input:0", shape=(None, 80, 80, 32), dtype=bfloat16), but it was called on an input with incompatible shape (None, 112, 112, 32).
+WARNING:tensorflow:Model was constructed with shape (None, 80, 80, 32) for input Tensor("sequential_5/sequential_4_input:0", shape=(None, 80, 80, 32), dtype=bfloat16), but it was called on an input with incompatible shape (None, 112, 112, 32).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_14/sequential_13_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_14/sequential_13_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_14/sequential_13/conv2d_8_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_14/sequential_13/conv2d_8_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_7/conv2d_3_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_7/conv2d_3_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_9/sequential_8_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("bottleneck/sequential_9/sequential_8_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("conv2d_9_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("conv2d_9_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("sequential_16_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("sequential_16_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("conv2d_14_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("conv2d_14_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("sequential_22_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 64) for input Tensor("sequential_22_input:0", shape=(None, 40, 40, 64), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 64).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("bottleneck_3/sequential_35/average_pooling2d_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("bottleneck_3/sequential_35/average_pooling2d_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 256) for input Tensor("bottleneck_3/sequential_35/sequential_34/conv2d_24_input:0", shape=(None, 20, 20, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 256) for input Tensor("bottleneck_3/sequential_35/sequential_34/conv2d_24_input:0", shape=(None, 20, 20, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("bottleneck_3/sequential_28/conv2d_19_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 256) for input Tensor("bottleneck_3/sequential_28/conv2d_19_input:0", shape=(None, 40, 40, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 128) for input Tensor("bottleneck_3/sequential_30/sequential_29_input:0", shape=(None, 40, 40, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 40, 40, 128) for input Tensor("bottleneck_3/sequential_30/sequential_29_input:0", shape=(None, 40, 40, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 56, 56, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_25_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_25_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_37_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_37_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_30_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_30_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_43_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_43_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_35_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("conv2d_35_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_49_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 128) for input Tensor("sequential_49_input:0", shape=(None, 20, 20, 128), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 128).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("bottleneck_10/sequential_83/average_pooling2d_2_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("bottleneck_10/sequential_83/average_pooling2d_2_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 512) for input Tensor("bottleneck_10/sequential_83/sequential_82/conv2d_61_input:0", shape=(None, 10, 10, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 512) for input Tensor("bottleneck_10/sequential_83/sequential_82/conv2d_61_input:0", shape=(None, 10, 10, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("bottleneck_10/sequential_76/conv2d_56_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 512) for input Tensor("bottleneck_10/sequential_76/conv2d_56_input:0", shape=(None, 20, 20, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 256) for input Tensor("bottleneck_10/sequential_78/sequential_77_input:0", shape=(None, 20, 20, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 20, 20, 256) for input Tensor("bottleneck_10/sequential_78/sequential_77_input:0", shape=(None, 20, 20, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 28, 28, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_62_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_62_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_85_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_85_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_67_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_67_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_91_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_91_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_72_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_72_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_97_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_97_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_77_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_77_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_103_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_103_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_82_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("conv2d_82_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_109_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 256) for input Tensor("sequential_109_input:0", shape=(None, 10, 10, 256), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 256).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("bottleneck_7/sequential_62/average_pooling2d_1_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("bottleneck_7/sequential_62/average_pooling2d_1_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 1024) for input Tensor("bottleneck_7/sequential_62/sequential_61/conv2d_45_input:0", shape=(None, 5, 5, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 1024) for input Tensor("bottleneck_7/sequential_62/sequential_61/conv2d_45_input:0", shape=(None, 5, 5, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("bottleneck_7/sequential_55/conv2d_40_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 1024) for input Tensor("bottleneck_7/sequential_55/conv2d_40_input:0", shape=(None, 10, 10, 1024), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 1024).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 512) for input Tensor("bottleneck_7/sequential_57/sequential_56_input:0", shape=(None, 10, 10, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 10, 10, 512) for input Tensor("bottleneck_7/sequential_57/sequential_56_input:0", shape=(None, 10, 10, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 14, 14, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 2048) for input Tensor("conv2d_46_input:0", shape=(None, 5, 5, 2048), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 2048).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 2048) for input Tensor("conv2d_46_input:0", shape=(None, 5, 5, 2048), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 2048).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 512) for input Tensor("sequential_64_input:0", shape=(None, 5, 5, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 512) for input Tensor("sequential_64_input:0", shape=(None, 5, 5, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 2048) for input Tensor("conv2d_51_input:0", shape=(None, 5, 5, 2048), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 2048).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 2048) for input Tensor("conv2d_51_input:0", shape=(None, 5, 5, 2048), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 2048).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 512) for input Tensor("sequential_70_input:0", shape=(None, 5, 5, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 512).
+WARNING:tensorflow:Model was constructed with shape (None, 5, 5, 512) for input Tensor("sequential_70_input:0", shape=(None, 5, 5, 512), dtype=bfloat16), but it was called on an input with incompatible shape (None, 7, 7, 512).
+14:29:46 valid - loss: 1.0397, acc: 0.7793, acc5: 0.9407
+Epoch 172/200
+14:33:41 train - loss: 2.3402, acc: 0.6740
+Save learner to /content/drive/MyDrive/models/ImageNet-107-3/ckpt
+14:33:55 valid - loss: 1.0329, acc: 0.7810, acc5: 0.9421
+Epoch 173/200
+14:37:47 train - loss: 2.3280, acc: 0.6770
+14:38:01 valid - loss: 1.0052, acc: 0.7837, acc5: 0.9431
+Epoch 174/200
+14:41:53 train - loss: 2.3228, acc: 0.6787
+Save learner to /content/drive/MyDrive/models/ImageNet-107-3/ckpt
+14:42:12 valid - loss: 1.0240, acc: 0.7849, acc5: 0.9441
+Epoch 175/200
+Traceback (most recent call last):
+  File "107.py", line 235, in <module>
+    save_freq=2, callbacks=[DropPathRateScheduleV2()])
+  File "/content/hanser/hanser/train/learner.py", line 242, in fit
+    self._run_epoch(self._train_it, steps_per_epoch, cbks, 'train')
+  File "/content/hanser/hanser/train/learner.py", line 344, in _run_epoch
+    state['metrics'][name] = metric.result().numpy()
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py", line 1063, in numpy
+    maybe_arr = self._numpy()  # pylint: disable=protected-access
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/framework/ops.py", line 1031, in _numpy
+    six.raise_from(core._status_to_exception(e.code, e.message), None)  # pylint: disable=protected-access
+  File "<string>", line 3, in raise_from
+tensorflow.python.framework.errors_impl.UnavailableError: Socket closed
+2021-07-08 06:58:46.023470: W tensorflow/core/distributed_runtime/eager/remote_tensor_handle_data.cc:76] Unable to destroy remote tensor handles. If you are running a tf.function, it usually indicates some op in the graph gets an error: Socket closed
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/distribute/tpu_strategy.py", line 540, in async_wait
+    context.async_wait()
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/eager/context.py", line 2319, in async_wait
+    context().sync_executors()
+  File "/usr/local/lib/python3.7/dist-packages/tensorflow/python/eager/context.py", line 658, in sync_executors
+    pywrap_tfe.TFE_ContextSyncExecutors(self._context_handle)
+tensorflow.python.framework.errors_impl.UnavailableError: 2 root error(s) found.
+  (0) Unavailable: Socket closed
+  (1) Unavailable: Unable to find a context_id matching the specified one (16236610489934235778). Perhaps the worker was restarted, or the context was GC'd?
+0 successful operations.
+0 derived errors ignored.
